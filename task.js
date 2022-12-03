@@ -28,18 +28,9 @@ Student.prototype.addMarks = function (...mark) {
   }
 }
 
-/* student.prototype.getAverage = function() {
-  let sum = 0;
-  for (let i = 0; i < this.mark.length; i++){
-    sum += this.mark[i];
-  }
-  avg = sum / this.mark.length;
-  return this.average = avg;
-} */
-
 Student.prototype.getAverage = function (avg) {
   let sum = 0;
-  for (let i = 0; i < this.mark.length; i++){
+  for (let i = 0; i < this.mark.length; i++) {
     sum += this.mark[i];
   }
   avg = sum / this.mark.length;
@@ -49,8 +40,17 @@ Student.prototype.getAverage = function (avg) {
 Student.prototype.exclude = function (reason) {
   delete this.subjectName;
   delete this.mark;
-  this.exclude = "reason";
+  this.exclude = reason;
 }
+
+/* student.prototype.getAverage = function() {
+  let sum = 0;
+  for (let i = 0; i < this.mark.length; i++){
+    sum += this.mark[i];
+  }
+  avg = sum / this.mark.length;
+  return this.average = avg;
+} */
 
 /* let student5 = new Student("Сатторов Умед", "male", 22);
 student2.setSubject("Algebra");
