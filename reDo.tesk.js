@@ -45,6 +45,6 @@ student1.setSubject = "Geometry";
 student1.addMark(5);
 student1.addMarks(3, 5, 5, 8, 1);
 student1.getAverage();
-student1.exclude("marks is bad");
+//student1.exclude("marks is bad");
 
 console.log(student1);
