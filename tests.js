@@ -32,6 +32,6 @@ describe("Домашнее задание к занятию 4 «Объекты»
       student2.exclude('low grades')
       expect(student2.excluded).toEqual('low grades');
     });
-
+    
   });
 });

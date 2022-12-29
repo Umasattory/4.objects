@@ -1,14 +1,14 @@
-function student(name, gender, age) {
+function Student(name, gender, age) {
   this.name = name;
   this.gender = gender;
   this.age = age;
 };
 
-student.prototype.subject = function (subjectName) {
-  this.subjectName = subjectName;
+Student.prototype.setSubject = function (subjectName) {
+  return this.subject = subjectName;
 };
 
-student.prototype.addMark = function (mark) {
+Student.prototype.addMark = function (mark) {
   if (this.marks === undefined) {
     this.marks = [mark]
   } else {
@@ -16,35 +16,56 @@ student.prototype.addMark = function (mark) {
   }
 };
 
-student.prototype.addMarks = function (...marks) {
+Student.prototype.addMarks = function (...marks) {
   if (this.marks === undefined) {
-    this.marks === [...marks]
+    this.marks === []
   } else {
     this.marks.push(...marks)
   }
 };
 
-student.prototype.getAverage = function () {
-
+Student.prototype.getAverage = function () {
   let sum = 0;
   for (let i = 0; i < this.marks.length; i++) {
     sum += this.marks[i];
   }
   avg = sum / this.marks.length;
-  return this.getAverage = avg;
-}
+  return this.avg = avg.toFixed(2);
+};
 
-student.prototype.exclude = function (reason) {
+Student.prototype.exclude = function (reason) {
   delete this.subject;
   delete this.marks;
   this.exclude = reason;
-}
+};
 
-const student1 = new student("Сатторов Умед", "male", 25);
-student1.setSubject = "Geometry";
+console.log()
+
+let student1 = new Student("Tony", "male", 37);
+student1.setSubject("Algebra");
 student1.addMark(5);
-student1.addMarks(3, 5, 5, 8, 1);
-student1.getAverage();
-//student1.exclude("marks is bad");
+student1.addMark(4);
+student1.addMark(5);
+
+let student2 = new Student("Buzz", "female", 35);
+student2.setSubject("Geometry");
+student2.addMark(2);
+student2.addMark(3);
+student2.addMark(2);
+student2.exclude('low grades')
 
 console.log(student1);
+console.log(student2);
+
+const student3 = new Student("Сатторов Умед", "male", 25);
+student3.setSubject("Geometry");
+student3.setSubject("English");
+student3.addMark(5);
+student3.addMarks(3, 3, 4, 5, 4);
+student3.getAverage();
+//student1.exclude("low grades");
+
+console.log(student3);
+console.log(student3.getAverage());
+console.log(student3.getAverage());
+console.log(student3.getAverage())
